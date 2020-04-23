@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Promise-Demo</title>
+</head>
+
+<body>
+    <h1>Promise Demo</h1>
+    <script src="./src/index.js"></script>
+    <script>
+        //console.log(Promise)
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (Math.random() > 0.5) {
+                    resolve('成功');
+                } else {
+                    reject('失败');
+                }
+            })
+        })
+
+        promise.then((data) => {
+            console.log('success' + data);
+        }, (err) => {
+            console.log('err' + err);
+        })
+
+        let p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('hello');
+                })
+            })
+
+            let p2 = p.then(data => {
+                return p2;
+            })
+
+    </script>
+</body>
+
+</html>
